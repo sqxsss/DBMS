@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Quality of the transformation of the ER diagram into a collection of relation schemas.}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Improved ER Diagram}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Relational Schema}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Quality of the transformation of the collection of relation schemas into a collection of SQL table schemas.}{6}{section.2}%

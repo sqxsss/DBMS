@@ -1,0 +1,191 @@
+\documentclass[]{article}
+
+\usepackage{multirow,hhline,graphicx,array}
+\usepackage{makecell}
+\usepackage{geometry}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{caption2}
+\usepackage[hidelinks]{hyperref}
+
+\makeatletter
+\def\@maketitle{%       
+	\newpage
+	\null
+	\vskip 14em%
+	\begin{center}%
+		\let \footnote \thanks
+		{\LARGE \@title \par}%
+		\vskip 12em%在这里改
+		{\large
+			\lineskip .5em%
+			\begin{tabular}[t]{c}%
+				\@author
+			\end{tabular}\par}%
+		\vskip 1em%
+		{\large \@date}%
+	\end{center}%
+	\par
+	\vskip 1.5em}
+\makeatother
+%opening
+\title{\Huge COP5725 - Database Management Systems\vspace{2.8em} \LARGE \textbf{Project Deliverable 1:} Weather Recording System}
+\author{
+	\Large Group 19:\qquad He,Jiahui,\\
+	\Large \qquad\qquad\qquad\qquad Shi,Qinxuan,\\
+	\Large \qquad\qquad\qquad\qquad Wang,Shihuan,\\
+	\Large \qquad\qquad\qquad\qquad\qquad Zhang,Guanglong
+}
+\date{}
+\special{papersize=8.5in,11in}
+\geometry{left=2.5cm,right=2.5cm,top=1.5cm,bottom=1.5cm}
+
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{Quality of the overview and description of the application}
+
+	Weather and climate are important factors that determine the normal operation of all sectors of society. Weather usually describes the atmospheric conditions at a certain point or period of time, such as temperature, precipitation, humidity, wind, and ultraviolet index. Weather data is very important in our daily lives. People change their clothes and daily travel plans according to changes in weather and climate. The collected precipitation and temperature data can be used to prevent natural disasters or disasters such as floods and droughts. In addition, weather and climate play a decisive role in agriculture and aviation. For example, weather conditions determine whether an aircraft can take off on time and which route is the safest and safest to choose. At the same time, the construction industry also needs weather data to arrange construction plans and programs. The long-term collection of weather data is of great significance for summarizing the meteorological conditions of the region and predicting the climate change trend in the region. \\
+	
+	\noindent Nowadays, there are many ways to collect weather data, from large weather radars to small weather stations, which are recording weather data all the time. In view of the importance of weather data, how to properly process and utilize these data has become an important topic.However, using paper data to record and analyze weather data is very cumbersome, inefficient, and unreliable. In addition, the paper-based data recording method is not convenient for storage and quick query. Therefore, we use the Oracle database to design a Weather Recording System. \\
+	
+	\noindent With the help of a web-based user interface, the system can store these large amounts of weather data in a structured manner and display these data publicly. For different users, you can use this system to operate on weather data according to different needs. In addition, the administrator can also update the data. This database system makes it possible to store a large amount of weather data with high security and long-term storage and at the same time improve the ease of use of the data. \\
+	
+	\noindent In addition, the system also provides different information display methods. In the web user interface, some useful information can be displayed to users in the form of charts. For example, a line chart can be used to show the changes in temperature and humidity. The proportion of different weather conditions in a certain period of time can be presented in the form of a pie chart. Different from the pure text information, these graphics can give users a more intuitive experience.
+
+\section{Quality of the motivation of the database needs of the application and the potential user interest in the application}
+
+	\subsection{Motivation of the Database needs of the Application}
+	
+	The advantage of using a database system is determined by the characteristics or advantages of the database management system. There are many benefits of using a database system. It can greatly improve the efficiency of searching data. It also provides better data integration:  we have access to well-managed and synchronized forms of data thus it makes data handling very easy and gives an integrated view of how a particular organization is working and also helps to keep track of how one segment of the company affects other segments. The data which is available with the help of a combination of tools that transform data into useful information helps users to make quick, informative, and better decisions.
+	
+	\subsection{Potential User Interest}
+
+	\noindent \textbf{Civilian:} Upon implementation of the new system, the civilian will be able to check the designated area's weather data. They will be able to grasp a rough idea about how the weather is like in a certain city throughout the years. Especially when considering moving, this application can contribute as a great reference.\\
+	
+	\noindent \textbf{Travelers:} Although the weather forecast is accurate nowadays, for people planning long-term travel, it is a good idea to check the destination’s previous records several months before the trip. They will be more thorough regarding preparing their belongings (e.g., clothing, body lotion, sunscreens, etc.)  \\
+	
+	\noindent \textbf{Agriculturists:} By studying regional climate over the past years, they will have details of temperature, humidity, insolation duration, and air quality index. Thus, they will be able to make better plans. As a result, they could increase their productivity.  \\
+
+	\noindent \textbf{Explorers:} Understanding area weather is vital for an explorer. By referring to weather data of the exploring region. They could make a better decision of team assembly, choose the right equipment, and carry an appropriate amount of supply.\\
+
+	\noindent \textbf{Event planners:} To schedule big outdoor events, planners must choose the right dates ahead of the schedule, normally a few months, or even years in some cases. They will be able to check the weather in the past years to schedule dates with mild weather.\\
+
+	\noindent \textbf{Astronomers:} Valuable observations require a clear sky. The system will help astronomers to select optimum observation times.\\
+
+	\noindent \textbf{Environmental Engineers:} The system allows environmental engineers to retrieve historical weather data. Therefore, they will be able to have enough data to analyze the change of environment of a certain area.\\
+
+	\noindent \textbf{Military:} Understanding the weather details helps armed forces schedule desirable dates to perform drills or weapon testing under ideal conditions.\\
+
+	\noindent \textbf{Civic Engineers:} The system will benefit engineers to design a timeline for a project. They could refer to the historical weather date to avoid the periods that occur in extreme weather, increasing efficiency.
+
+\section{Quality of the description of the needed web-based user interface functionality}
+
+	To get customized information and access previous searching records, a user must log in. The web-based user interface has two text boxes that allow users to register and log in. In addition, by logging in, the system can determine the users’ access level. Namely, to distinguish if they are regular users or administrators. After logging in, the interface will allow users to review previously saved data and select locations using a dropdown list and specific data using a calendar table to query weather data. The result will be displayed on the right side of the screen. Users will be able to draw down the page to view data if results are not fitted in one page. Users can highlight rows to save, compare and visualize data. Administrators will have all the access that users have but an extra bottom to click in, where they could modify data, delete users, and change users’ passwords.
+
+\section{Quality of the description of the application goals regarding trend analysis}
+
+	As the database system is put into use, these weather data can bring us more than just individual numbers. Through the analysis and understanding of these data, we can obtain deeper information from it in order to make better use of the data. \\
+	
+	\noindent Analyzing the changes in the weather throughout the year can help users summarize and analyze the changing trends of various weather factors at the location inquired. For example, the approximate change time of the four seasons in the area and the average temperature of each season can be determined through the analysis of temperature changes throughout the year. In addition, through the analysis of the UV index, we can know the trend of UV changes in this place. Further, the comparison of the UV index across the whole year can help users analyze and simulate the UV conditions of the area in different seasons and weather conditions. Also, through the analysis of precipitation, it is possible to determine the approximate distribution of the rainy and dry seasons in the area. \\
+	
+	\noindent More in-depth, through the analysis and summary of specific weather data, combined with other data and application scenarios, we can extract richer information from it. If we combine temperature, humidity and ultraviolet intensity data, we can determine whether the weather conditions of the day can make people feel comfortable or whether it is suitable for holding certain events. By comparing the information over the years, we can learn about the climate change trend of the place and determine whether there is a tendency for environmental pollution to help government departments better carry out urban planning and industrial adjustments. The excavated information plays an important role in life, production, sales, and scientific research.
+	
+\section{Quality of the description of the real-word data forming the basis of the application and the complex trend queries}
+
+	Weather conditions are closely related to the business development of various industries, and connected with people's daily travel. Current weather forecast technology mainly uses advanced data analysis technology to forecast and broadcast. Although the accuracy of weather conditions has been steadily improving, it cannot meet people's needs. Our team searched the weather data of different cities in the past three years to explore and apply the hidden value about the weather data. \\
+	
+	\noindent As an important part of big data, weather data also has many characteristics of big data. First of all, the data content of weather data is large, the data repeatability is high, and there are various ways to collect weather data. Secondly, weather data is closely related to tourism, agriculture, transportation, etc. It is easy for people to forecast weather, based on the weather in the past years, months and days provided by the system. Therefore, it is not difficult to see the important tasks of weather forecasting in various fields, and the basis of weather forecasting is data search and data analysis. It is exactly what our project wants to achieve successfully. Since the weather changes all the time, we need a lot of data for trend analysis. Merely selecting weather information during the year may have limitations. Therefore, we will collect as much data as possible, so that the forecast of future weather and analysis of weather conditions will be more accurate. \\
+	
+	\noindent Program users can select weather information at different times and locations through the system for comparison, and the results are reflected by the line chart. Through the trend study of the line chart, the approximate weather conditions within the same time period in the future can be judged. The correlation between time and weather can also be calculated. The relatively small correlation coefficient between the two variables indicates that the correlation between the variables is weak. By the analysis of weather trends under different conditions, the statistics of a large number of weather data can not only be used for weather calculations, but also widely used in agriculture, forestry, water conservancy, energy and many other sectors, which is of great significance.
+	
+\section{Quality of five colloquial complex trend queries and their explanation}
+
+	\subsection{Trend of Temperature}
+	
+	Users could learn about the trend of temperature change at different cities(5 given cities, provided by the system according to the data set) from our system. Since we focus on a relatively long period of time to analyze the trend, the system will provide two kinds of time granularity: Day and Month. When users choose different time granularities, they need to choose different time formats. For example, when choosing Day, users have to choose a time from '2020/08/07' to '2020/09/07'. Then, the system will calculate the daily average temperature from '2020/08/07' to '2020/09/07' according to the data sets. So, In the line chart, the x-axis is day and the y-axis is average temperature(Daily, Monthly).    \\
+	
+	\noindent Users could also choose the cities that they are interested in no matter what kind of time granularity they choose. They can choose only one city to see the trend over the time interval, or they can choose multiple cities so that they can compare the temperature in different cities. When choosing several cities, there will be several lines of different colors on the chart. 
+	
+	\subsection{Trend of UV Index}
+	
+	Users could learn about the trend of UV Index change at different cities(5 given cities, provided by the system according to the data set) from our system. The system will provide two kinds of time granularity: Day and Month, because we try to focus on a relatively long period of time to analyze the trend. When users choose different time granularities, they need to choose different time formats. For example, when choosing Month, users have to choose the time from '2020/03' to '2020/09'. Then, the system will calculate the monthly average UV Index from '2020/03' to '2020/09' according to the data sets. So, In the line chart, the x-axis is month and the y-axis is the average UV Index(Daily, Monthly).     \\
+	
+	\noindent Users could also choose the cities that they are interested in no matter what kind of time granularity they choose. They can choose only one city to see the trend over the time interval, or they can choose multiple cities so that they could compare the UV Index in different cities. When choosing several cities, there will be several lines of different colors on the chart. \\
+	
+	\noindent Attention: Since the UV Index equals to 0 when there is no sunlight(e.g., 11:00pm), the system only takes the hours that have nonzero UV Index into account. 
+	
+	\subsection{Trend of Precipitation}
+	
+	Users could learn about the trend of Precipitation at different cities(5 given cities, provided by the system according to the data set) from our system. Compared to the trend of temperature and UV index, the system only provides the 'Month' time granularity, since it is meaningless to study the daily precipitation and the data of the daily precipitation is not suitable to be shown in the diagram. Users are asked to choose the time interval such as from '2018/08' to '2019/06', then the system will show the diagram, of which the x-axis is month and the y-axis is the monthly average Precipitation.User could figure out the change of precipitation from the start to the end.     \\
+	
+	\noindent Users could also choose the cities that they are interested in. They can choose only one city to see the trend of precipitation over the time interval, or they can choose multiple cities so that they could compare the monthly average precipitation in different cities. When choosing several cities, there will be several lines of different colors on the chart.   
+	
+	\subsection{Temperature Anomaly}
+	
+	Users could learn about the temperature anomaly which from our system. The system provides two kinds of time granularity: Day and Month. When Users choosing 'Day', the system will calculate the average daily temperature as a reference; when Users choosing 'Month', the system will calculate the average monthly temperature. For example, users are asked to choose the time interval such as from '2018/08' to '2019/06', then the system will show the diagram. However, compared to other diagrams, although the x-axis of this diagram is still about time (Day, Month), the y-axis is the differences from average temperature like +2, or -1. As a result, Users can easily figure out the abnormal days.     \\
+	
+	\noindent Users could also choose different cities that they are interested in, but because of the reason that temperature anomaly diagram is mainly used for figuring out the exceptions, it is meaningless for the system as well as the users to choose several cities at a time and compare with each other. As a result, they could only select one city and then switch to another one.  
+	
+	\subsection{The Most Comfortable Environment}
+	
+	According to the measurement, the most comfortable ambient temperature is about 77$ ^\circ$F and the relative humidity is in the range of 40\% - 60\% RH. Appropriate relative humidity will make people feel very comfortable, maintain human health and improve work efficiency.  \\
+	
+	\noindent Users could know the most comfortable days in a month in different cities(3-5 given cities, provided by the system according to the data set) from our system. The system identifies one day to be the most comfortable day if the average temperature of the day is between [72-82]$ ^\circ$F and the average humidity of the day is in the range of 40\% - 60\% RH. The system provides a diagram with a monthly time interval at its x-axis and number of the most comfortable days at its y-axis. Here's an example, the user chooses the time 2 interval from '2020/05' to '2020/10', the data should be like ('2020/06', 13), which means the month is June 2020('2020/06') and the number of days is 13. \\
+	
+	\noindent Users could also choose the cities that they are interested in. They can choose only one city to see which month in the city is the most comfortable month, or they can choose multiple cities so that they could compare the number of the most comfortable days in the same month but in different cities(when choosing multiple cities, users could still choose the time interval(monthly)). When choosing several cities, there will be several lines of different colors on the chart.
+	
+
+\section{Quality of the description of the intended use of public domain and/or proprietary software}
+	\subsection{Introduction}
+	
+	Since the project is meant to design and implement a web-based database application program, we choose to use the architecture of front and rear separation. We decided to use Java to be the back-end programming language and HTML5 assisted by CSS, JavaScript to develop the front-end of the project. We will also adopt Vue.js frontend with a Spring Boot Backend. To the software, IntelliJ IDEA and WebStorm or VSCode are the choices for programming. The following sections will describe these in detail. 
+
+	\subsection{Programming language}
+	
+	\noindent Java is one of the most commonly used programming languages nowadays. It is easy for people to learn because Java offers user-friendly syntaxes for developing Java applications. Besides, Object-Oriented is one of the important features of Java, which helps us to build Entity classes corresponding to the tables in the databases. What's more, Java provides Java Database Connectivity (JDBC) API, which is the industry standard for database-independent connectivity between the Java programming language and a wide range of databases. \\
+	
+	\noindent HTML5, CSS and Javascript are used together to develop front-end applications. A web page consists of HTML, CSS and JavaScript. Html is the main body, loading various DOM elements, CSS is used to decorate DOM elements and JavaScript controls DOM elements. With the coordination of these three languages, development becomes simple, fast, and effective. 
+
+	\subsection{Framework}
+	
+	\noindent Spring Boot is a Framework to ease the bootstrapping and development of new Spring Applications. It provides Embedded HTTP servers like Tomcat to develop and test the web applications very easily. It also integrates Spring Boot Application easily with its Spring Ecosystem like Spring JDBC. Spring Boot Framework is quite effective for us to develop a database application program. \\
+	
+	\noindent Vue.js is a progressive framework for building user interfaces. Vue.js facilitates two way communications because of its MVVM architecture which makes it quite easy to handle HTML blocks. It seems very close to Angular.js which also speeds up HTML blocks. However, compared to Angular.js, Vue is easier to manage, both at the design and API level.   
+
+	\subsection{Software}
+	
+	\noindent The reason why we choose IntelliJ IDEA is that it is easy to create a spring project as well as build a connection to the database. IntelliJ IDEA is a Java IDE, it enables developers to work more efficiently. It is also very good at checking over the quality and validity of your code with on-the-fly inspections. \\
+	
+	\noindent Compared to the software used for developing front-end, WebStorm and VSCode are much better than other softwares. These two softwares could help us increase code quality as well as reduce mistakes while coding, they could allow us to write code much faster. 
+
+\section{Responsibility}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{12cm}|l|}
+			\hline
+			Quality of the overview and description of the application & He,Jiahui \\ 
+			\hline
+			Quality of the motivation of the database needs of the application and the potential user interest in the application &  Wang,shihuan  \\ 
+			\hline
+			Quality of the description of the needed web-based user interface functionality & Wang,shihuan \\
+			\hline
+			Quality of the description of the application goals regarding trend analysis & He,Jiahui \\ 
+			\hline
+			Quality of the description of the real-word data forming the basis of the application and the complex trend queries & Zhang,guanglong   \\ 
+			\hline
+			Quality of five colloquial complex trend queries and their explanation & Shi,qinxuan  \\ 
+			\hline
+			Quality of the description of the intended use of public domain and/or proprietary software & Shi,qinxuan  \\ 
+			\hline
+		\end{tabular}
+	\end{table}
+
+\end{document}

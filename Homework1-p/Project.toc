@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Quality of the overview and description of the application}{3}{section.1}%
+\contentsline {section}{\numberline {2}Quality of the motivation of the database needs of the application and the potential user interest in the application}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivation of the Database needs of the Application}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Potential User Interest}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Quality of the description of the needed web-based user interface functionality}{4}{section.3}%
+\contentsline {section}{\numberline {4}Quality of the description of the application goals regarding trend analysis}{4}{section.4}%
+\contentsline {section}{\numberline {5}Quality of the description of the real-word data forming the basis of the application and the complex trend queries}{5}{section.5}%
+\contentsline {section}{\numberline {6}Quality of five colloquial complex trend queries and their explanation}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Trend of Temperature}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Trend of UV Index}{5}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Trend of Precipitation}{6}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Temperature Anomaly}{6}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}The Most Comfortable Environment}{6}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Quality of the description of the intended use of public domain and/or proprietary software}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Introduction}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Programming language}{7}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Framework}{7}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Software}{7}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Responsibility}{8}{section.8}%
